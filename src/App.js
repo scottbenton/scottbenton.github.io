@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import ThemeProvider from '@material-ui/styles/ThemeProvider';
+import { createMuiTheme } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline'
+
+import AppBar from './Components/AppBar';
+import Page from './Components/PageContent/Page';
+import SECTIONS from './Content/Sections';
+
+const theme = () => createMuiTheme({
+  palette: {
+    primary: { main: '#455A64' },
+    secondary: { main: '#7B1FA2' },
+
+    background: {
+      default: '#F5F5F5',
+      paper: '#FFFFFF',
+    },
+  }
+});
 
 function App() {
+
+  const [selectedSection, setSelectedSection] = useState(SECTIONS.ABOUT);
+
+  const myTheme = theme();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={myTheme}>
+      <CssBaseline />
+      <AppBar selectedSection={selectedSection} setSelectedSection={setSelectedSection} />
+      <Page pageOptions={selectedSection} />
+    </ThemeProvider>
   );
 }
 
