@@ -4,4 +4,5 @@ export default {
   fullName: 'Scott Benton',
   initials: 'SB',
   mobileBreakpoint: "sm",
+  email: 'scott.ma.benton@gmail.com'
 }

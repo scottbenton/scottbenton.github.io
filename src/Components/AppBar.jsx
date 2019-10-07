@@ -16,6 +16,8 @@ import { useIsMobile } from './MobileHelpers';
 
 import Drawer from './Drawer';
 
+import Resume from '../Content/Resources/Resume-ScottBenton.pdf';
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -56,6 +58,12 @@ export default function ButtonAppBar(props) {
     setSelectedSection(section);
   }
 
+  const downloadFile = (filePath, fileName) => {
+    var link = document.createElement('a');
+    link.href = filePath;
+    link.download = fileName;
+    link.click();
+  }
 
   return (
     <div className={classes.root}>
@@ -101,7 +109,7 @@ export default function ButtonAppBar(props) {
                   )}
                 </Grid>
                 <Grid item md={3} className={classes.rightAlign}>
-                  <Button color="secondary" variant='outlined'>
+                  <Button color="secondary" variant='outlined' onClick={() => downloadFile(Resume, 'ScottBenton-Resume.pdf')}>
                     <DescriptionSharpIcon className={classes.resumeIcon} />
                     Resume
                 </Button>

@@ -6,7 +6,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { wrap } from 'module';
 
 const useStyles = makeStyles(theme => ({
   card: {

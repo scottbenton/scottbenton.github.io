@@ -38,7 +38,7 @@ export default function WorkContent() {
             {project.codeLink && <Button onClick={() => window.open(project.codeLink)}>
                 View the Code
             </Button>}
-            {project.deployedLink && <Button onClick={() => window.open(project.deployedLink)}>
+            {project.deployedLink && <Button onClick={() => window.open(project.deployedLink)} variant="contained" color="secondary">
                 Visit the Website
             </Button>}
         </>);
