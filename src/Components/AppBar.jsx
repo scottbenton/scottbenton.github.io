@@ -12,6 +12,8 @@ import CONSTANTS from '../Content/Constants';
 import SECTIONS from '../Content/Sections';
 import { useMediaQuery, useTheme, Grid, Tooltip } from '@material-ui/core';
 
+import Drawer from './Drawer';
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -47,6 +49,8 @@ export default function ButtonAppBar(props) {
 
   const { selectedSection, setSelectedSection } = props;
 
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+
   const onButtonClick = (section) => {
     setSelectedSection(section);
   }
@@ -60,8 +64,14 @@ export default function ButtonAppBar(props) {
           <Grid container>
             {isMobile ?
               <>
+                <Drawer
+                  open={drawerOpen}
+                  setOpen={setDrawerOpen}
+                  selectedSection = {selectedSection}
+                  setSelectedSection={setSelectedSection}
+                />
                 <Grid item xs={4}>
-                  <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                  <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={()=>setDrawerOpen(true)}>
                     <MenuIcon />
                   </IconButton>
                 </Grid>
