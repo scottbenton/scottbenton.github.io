@@ -10,7 +10,9 @@ import DescriptionSharpIcon from '@material-ui/icons/DescriptionSharp';
 
 import CONSTANTS from '../Content/Constants';
 import SECTIONS from '../Content/Sections';
-import { useMediaQuery, useTheme, Grid, Tooltip } from '@material-ui/core';
+import { useTheme, Grid, Tooltip } from '@material-ui/core';
+
+import { useIsMobile } from './MobileHelpers';
 
 import Drawer from './Drawer';
 
@@ -45,8 +47,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function ButtonAppBar(props) {
   const classes = useStyles();
-  const theme = useTheme();
-
+  const isMobile = useIsMobile(useTheme());
   const { selectedSection, setSelectedSection } = props;
 
   const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -55,7 +56,6 @@ export default function ButtonAppBar(props) {
     setSelectedSection(section);
   }
 
-  const isMobile = useMediaQuery(theme.breakpoints.down(CONSTANTS.mobileBreakpoint));
 
   return (
     <div className={classes.root}>
@@ -67,11 +67,11 @@ export default function ButtonAppBar(props) {
                 <Drawer
                   open={drawerOpen}
                   setOpen={setDrawerOpen}
-                  selectedSection = {selectedSection}
+                  selectedSection={selectedSection}
                   setSelectedSection={setSelectedSection}
                 />
                 <Grid item xs={4}>
-                  <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={()=>setDrawerOpen(true)}>
+                  <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={() => setDrawerOpen(true)}>
                     <MenuIcon />
                   </IconButton>
                 </Grid>
@@ -103,7 +103,7 @@ export default function ButtonAppBar(props) {
                 <Grid item md={3} className={classes.rightAlign}>
                   <Button color="secondary" variant='outlined'>
                     <DescriptionSharpIcon className={classes.resumeIcon} />
-                    Resume 
+                    Resume
                 </Button>
                 </Grid>
               </>

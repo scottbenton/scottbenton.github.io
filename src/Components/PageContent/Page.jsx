@@ -15,7 +15,6 @@ const useStyles = makeStyles(theme => ({
   contentPaper: {
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(2),
-    height: '100%',
   },
   content: {
     margin: theme.spacing(2),
@@ -23,6 +22,9 @@ const useStyles = makeStyles(theme => ({
   container: {
     marginTop: theme.spacing(2),
   },
+  title: {
+    fontWeight: 300,
+  }
 }));
 
 export default function Page(props) {
@@ -41,7 +43,7 @@ export default function Page(props) {
           <Paper className={classes.contentPaper} elevation={5}>
             <Paper className={classes.headerPaper} elevation={8}>
               <Fade in={true} timeout={TIMEOUT_START + TIMEOUT_OFFSET}>
-                <Typography variant="h4">
+                <Typography variant="h3" className={classes.title}>
                   {pageOptions.title}
                 </Typography>
               </Fade>
@@ -52,6 +54,11 @@ export default function Page(props) {
               </div>
             </Fade>
           </Paper>
+          <Fade in={true} timeout={TIMEOUT_START}>
+            <div className={classes.content}>
+              {pageOptions.cards}
+            </div>
+          </Fade>
         </Grid>
       </Fade>
     </Grid>

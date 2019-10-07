@@ -8,6 +8,8 @@ import ContactIcon from '@material-ui/icons/EmailSharp';
 
 import AboutContent from './SectionContent/AboutContent';
 import WorkContent from './SectionContent/WorkContent';
+import EducationContent from './SectionContent/EducationContent';
+import ProjectsContent from './SectionContent/ProjectsContent';
 
 export default {
   ABOUT: {
@@ -20,19 +22,19 @@ export default {
     "icon": <WorkIcon />,
     "name": "Work Experience",
     "title" : "Work Experience",
-    "content": <WorkContent />,
+    "cards": <WorkContent />,
   },
   EDUCATION: {
     "icon": <EducationIcon />,
     "name": "Education",
     "title" : "Education",
-    "content": [],
+    "content": <EducationContent />,
   },
   PROJECTS: {
     "icon": <ProjectsIcon />,
     "name": "My Projects",
     "title" : "Projects",
-    "content": [],
+    "cards": <ProjectsContent />,
   },
   CONTACT: {
     "icon": <ContactIcon />,

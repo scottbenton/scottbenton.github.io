@@ -8,14 +8,14 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles(theme => ({
   card: {
     height: '100%',
-    padding: theme.spacing(1)
+    padding: theme.spacing(1),
   },
 }));
 
-export default function ImgMediaCard(props) {
+export default function WorkCard(props) {
   const classes = useStyles();
 
-  const { image, title, subTitle, content, key} = props;
+  const { image, title, subTitle, content, key, } = props;
   return (
     <Card className={classes.card} key={key} elevation={5}>
       <CardMedia
@@ -29,7 +29,7 @@ export default function ImgMediaCard(props) {
           {title}
         </Typography>
         <Typography gutterBottom>
-          {subTitle}  
+          {subTitle}
         </Typography>
         {content}
       </CardContent>

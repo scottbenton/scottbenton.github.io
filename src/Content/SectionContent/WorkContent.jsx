@@ -6,7 +6,7 @@ import CVLogo from '../Resources/CVLogo.png';
 
 import Grid from '@material-ui/core/Grid';
 
-import ImageCard from '../../Components/PageContent/ImageCard';
+import ImageCard from '../../Components/PageContent/WorkCard';
 import { Typography } from '@material-ui/core';
 
 export default function WorkContent() {
