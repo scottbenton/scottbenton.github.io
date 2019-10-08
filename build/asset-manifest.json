@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.34de6062.chunk.css",
+    "main.js": "/static/js/main.a5b8ec83.chunk.js",
+    "main.js.map": "/static/js/main.a5b8ec83.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cec5acb5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cec5acb5.js.map",
+    "static/css/2.8271af8e.chunk.css": "/static/css/2.8271af8e.chunk.css",
+    "static/js/2.b8948b13.chunk.js": "/static/js/2.b8948b13.chunk.js",
+    "static/js/2.b8948b13.chunk.js.map": "/static/js/2.b8948b13.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.45c0b3179f0f5bc771668934817e21f9.js": "/precache-manifest.45c0b3179f0f5bc771668934817e21f9.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.8271af8e.chunk.css.map": "/static/css/2.8271af8e.chunk.css.map",
+    "static/css/main.34de6062.chunk.css.map": "/static/css/main.34de6062.chunk.css.map",
+    "static/media/ASORTD.png": "/static/media/ASORTD.19f834e7.png",
+    "static/media/CVLogo.png": "/static/media/CVLogo.f8f180fa.png",
+    "static/media/ProfilePic.jpg": "/static/media/ProfilePic.51a08a6e.jpg",
+    "static/media/Resume-ScottBenton.pdf": "/static/media/Resume-ScottBenton.6a58fcd2.pdf",
+    "static/media/SportsEmporiumLogo.png": "/static/media/SportsEmporiumLogo.152af355.png",
+    "static/media/TextTwistBackground.png": "/static/media/TextTwistBackground.38556ce0.png",
+    "static/media/UDLogo.jpg": "/static/media/UDLogo.420c7995.jpg",
+    "static/media/WSFSLogo.png": "/static/media/WSFSLogo.8e513381.png",
+    "static/media/linkedinIcon.svg": "/static/media/linkedinIcon.4c13d5e4.svg",
+    "static/media/index.css": "/static/media/roboto-latin-900italic.ebf6d164.woff2"
+  }
+}
