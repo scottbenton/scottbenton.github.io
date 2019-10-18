@@ -54,7 +54,33 @@ const useStyles = makeStyles(theme => ({
 
 export default function AboutContent() {
   const classes = useStyles();
-  const technologies = ['Java', 'C++', 'C', 'Python', 'HTML', 'JavaScript', 'CSS', 'React', 'SQL', 'Mongo', 'Node'];
+  const technologies = [
+    {
+      title: 'Web Technologies',
+      listItems: [
+        'HTML',
+        'JavaScript',
+        'TypeScript',
+        'CSS',
+        'React',
+        'SQL',
+        'Mongo',
+        'Node',
+        'Express',
+        'PHP'
+      ]
+    },
+    {
+      title: 'Additional Technologies',
+      listItems: [
+        'Java',
+        'C++',
+        'C',
+        'Python',
+        'OpenGL'
+      ]
+    },
+  ];
   const listify = (arr) => arr.map((content) => { return { primaryText: content } });
 
   const contactMethods = [
@@ -90,9 +116,17 @@ export default function AboutContent() {
       <Typography variant='h5' className={classes.sectionTitle}>
         Languages & Technologies
       </Typography>
+
       <Divider />
 
-      <Lists listContent={listify(technologies)} icon={<ArrowIcon />} />
+      {technologies.map(section => (
+        <>
+          <Typography variant='h6' className={classes.sectionTitle}>
+            {section.title}
+          </Typography>
+          <Lists listContent={listify(section.listItems)} icon={<ArrowIcon />} />
+        </>
+      ))}
 
       <Typography variant='h5' className={classes.sectionTitle}>
         Contact Me
