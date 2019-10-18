@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "12549a1d5d2650cad586dec38647007b",
+    "revision": "7961a18d49043aed66e73a13828b345d",
     "url": "/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.8271af8e.chunk.css"
   },
   {
-    "revision": "d6045bcb8fe28cdf0d1a",
+    "revision": "ec4c00c8bed1662d90b7",
     "url": "/static/css/main.34de6062.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.05aee14a.chunk.js"
   },
   {
-    "revision": "d6045bcb8fe28cdf0d1a",
-    "url": "/static/js/main.b8c15285.chunk.js"
+    "revision": "ec4c00c8bed1662d90b7",
+    "url": "/static/js/main.c7f97684.chunk.js"
   },
   {
     "revision": "1bb6be0bfa881a19746f",
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/ProfilePic.51a08a6e.jpg"
   },
   {
-    "revision": "6a58fcd2392c569cd3bec7196bce62fd",
-    "url": "/static/media/Resume-ScottBenton.6a58fcd2.pdf"
+    "revision": "3fc8ac05b8f160240be8342915156ddc",
+    "url": "/static/media/Resume-ScottBenton.3fc8ac05.pdf"
   },
   {
     "revision": "152af3559e2534f01b62b29bac1b6030",
