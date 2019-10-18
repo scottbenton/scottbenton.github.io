@@ -2,7 +2,7 @@ import React from 'react';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Grid, Grow } from '@material-ui/core';
 
 import Fade from '@material-ui/core/Fade';
 
@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
 export default function Page(props) {
   const classes = useStyles();
 
-  const TIMEOUT_START = 800;
+  const TIMEOUT_START = 500;
   const TIMEOUT_OFFSET = 1000;
 
   const { pageOptions } = props;
@@ -48,17 +48,15 @@ export default function Page(props) {
                 </Typography>
               </Fade>
             </Paper>
-            <Fade in={true} timeout={TIMEOUT_START}>
-              <div className={classes.content}>
-                {pageOptions.content}
-              </div>
-            </Fade>
-          </Paper>
-          <Fade in={true} timeout={TIMEOUT_START}>
+            {/* <Fade in={true} timeout={TIMEOUT_START + 2 * TIMEOUT_OFFSET}> */}
             <div className={classes.content}>
-              {pageOptions.cards}
+              {pageOptions.content}
             </div>
-          </Fade>
+            {/* </Fade> */}
+          </Paper>
+          <div className={classes.content}>
+            {pageOptions.cards}
+          </div>
         </Grid>
       </Fade>
     </Grid>

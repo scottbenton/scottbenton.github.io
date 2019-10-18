@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Divider, IconButton, Tooltip, Button, SvgIcon } from '@material-ui/core';
+import { Typography, Divider, IconButton, Tooltip, Button, SvgIcon, Fade } from '@material-ui/core';
 
 import ArrowIcon from '@material-ui/icons/ArrowForwardIos';
 
@@ -11,6 +11,7 @@ import EmailIcon from '@material-ui/icons/Email';
 
 import ProfilePic from '../Resources/ProfilePic.jpg';
 import CONSTANTS from '../Constants';
+
 
 const useStyles = makeStyles(theme => ({
   paragraph: {
@@ -81,6 +82,7 @@ export default function AboutContent() {
       ]
     },
   ];
+
   const listify = (arr) => arr.map((content) => { return { primaryText: content } });
 
   const contactMethods = [
@@ -102,59 +104,74 @@ export default function AboutContent() {
 
   return (
     <>
-      <MyAvatar image={ProfilePic} />
-
-      <Typography variant='h5' className={classes.firstTitle}>
-        About Me
-      </Typography>
-      <Divider />
-
-      <Typography className={classes.paragraph}>
-        I am a Software Engineer with experience in both front and back end development. Currently, I live in Newark, Delaware, and attend college at the University of Delaware. I will be graduating from the university in December with a Computer Science degree. At UD, I have studied topics such as multi-threading, computer graphics, software engineering, artificial intelligence, and web application development and security.
-      </Typography>
-
-      <Typography variant='h5' className={classes.sectionTitle}>
-        Languages & Technologies
-      </Typography>
-
-      <Divider />
-
-      {technologies.map(section => (
-        <div key={section.title}>
-          <Typography variant='h6' className={classes.sectionTitle}>
-            {section.title}
-          </Typography>
-          <Lists listContent={listify(section.listItems)} icon={<ArrowIcon />} />
+      <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION}>
+        <div>
+          <MyAvatar image={ProfilePic} />
         </div>
-      ))}
-
-      <Typography variant='h5' className={classes.sectionTitle}>
-        Contact Me
+      </Fade>
+      <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: CONSTANTS.ANIMATION_OFFSET }}>
+        <div>
+          <Typography variant='h5' className={classes.firstTitle}>
+            About Me
+          </Typography>
+          <Divider />
+          <Typography className={classes.paragraph}>
+            I am a Software Engineer with experience in both front and back end development. Currently, I live in Newark, Delaware, and attend college at the University of Delaware. I will be graduating from the university in December with a Computer Science degree. At UD, I have studied topics such as multi-threading, computer graphics, software engineering, artificial intelligence, and web application development and security.
       </Typography>
-      <Divider />
+        </div>
+      </Fade >
 
-      <Typography className={classes.paragraph}>Feel free to reach out to me with any questions or opportunities!</Typography>
-      <div className={classes.contactHolder} >
-        <Button
-          onClick={() => window.locationhref = 'mailto:' + CONSTANTS.email}
-          variant="contained"
-          color="secondary"
-          className={classes.emailButton}
-        >
-          <EmailIcon className={classes.email} />
-          {CONSTANTS.email}
-        </Button>
+      <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: 2 * CONSTANTS.ANIMATION_OFFSET }}>
+        <div>
+          <Typography variant='h5' className={classes.sectionTitle}>
+            Languages & Technologies
+          </Typography>
 
-        <div className={classes.spaceEater} />
+          <Divider />
+          {
+            technologies.map((section, index) => (
+              <div key={section.title}>
+                <Typography variant='h6' className={classes.sectionTitle}>
+                  {section.title}
+                </Typography>
+                <Lists listContent={listify(section.listItems)} icon={<ArrowIcon />} />
+              </div>
+            ))
+          }
+        </div>
+      </Fade>
 
-        {contactMethods.map(method => (
-          <Tooltip title={method.name} key={method.link}>
-            <IconButton color="secondary" onClick={() => window.open(method.link)}>
-              {method.icon}
-            </IconButton>
-          </Tooltip>
-        ))}
-      </div>
+      <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: 3 * CONSTANTS.ANIMATION_OFFSET }}>
+        <div>
+          <Typography variant='h5' className={classes.sectionTitle}>
+            Contact Me
+          </Typography>
+          <Divider />
+
+          <Typography className={classes.paragraph}>Feel free to reach out to me with any questions or opportunities!</Typography>
+          <div className={classes.contactHolder} >
+            <Button
+              onClick={() => window.locationhref = 'mailto:' + CONSTANTS.email}
+              variant="contained"
+              color="secondary"
+              className={classes.emailButton}
+            >
+              <EmailIcon className={classes.email} />
+              {CONSTANTS.email}
+            </Button>
+
+            <div className={classes.spaceEater} />
+
+            {contactMethods.map(method => (
+              <Tooltip title={method.name} key={method.link}>
+                <IconButton color="secondary" onClick={() => window.open(method.link)}>
+                  {method.icon}
+                </IconButton>
+              </Tooltip>
+            ))}
+          </div>
+        </div>
+      </Fade>
     </>
   )
 }

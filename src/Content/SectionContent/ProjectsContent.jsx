@@ -6,9 +6,10 @@ import ASORTDLogo from '../Resources/ASORTD.png';
 import Grid from '@material-ui/core/Grid';
 
 import ImageCard from '../../Components/PageContent/ProjectCard';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Button, Grow } from '@material-ui/core';
 
 import { openLink } from '../../HelperFunctions/URLHelper';
+import CONSTANTS from '../Constants';
 
 export default function WorkContent() {
     const projects = [
@@ -50,13 +51,17 @@ export default function WorkContent() {
         <Grid container spacing={3}>
             {projects.map((project, index) => (
                 <Grid item xs={12} md={6} key={index}>
-                    <ImageCard
-                        title={project.name}
-                        image={project.image}
-                        content={projectDescription(project)}
-                        actions={getActions(project)}
-                        onClick={() => window.open(project.deployedLink)}
-                    />
+                    <Grow in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: 1 * CONSTANTS.ANIMATION_OFFSET }}>
+                        <div style={{ height: '100%' }}>
+                            <ImageCard
+                                title={project.name}
+                                image={project.image}
+                                content={projectDescription(project)}
+                                actions={getActions(project)}
+                                onClick={() => window.open(project.deployedLink)}
+                            />
+                        </div>
+                    </Grow>
                 </Grid>
             ))}
         </Grid>

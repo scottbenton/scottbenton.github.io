@@ -3,6 +3,9 @@ export default {
   lastName: 'Benton',
   fullName: 'Scott Benton',
   initials: 'SB',
+  email: 'scott.ma.benton@gmail.com',
+
   mobileBreakpoint: 'sm',
-  email: 'scott.ma.benton@gmail.com'
+  ANIMATION_DURATION: 800,
+  ANIMATION_OFFSET: 200,
 }
