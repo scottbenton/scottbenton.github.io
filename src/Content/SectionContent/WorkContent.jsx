@@ -7,7 +7,7 @@ import CVLogo from '../Resources/CVLogo.png';
 import Grid from '@material-ui/core/Grid';
 
 import ImageCard from '../../Components/PageContent/WorkCard';
-import { Typography } from '@material-ui/core';
+import Lists from '../../Components/PageContent/Lists';
 
 export default function WorkContent() {
   const workplaces = [
@@ -47,11 +47,9 @@ export default function WorkContent() {
   ]
 
   const workplaceContent = (content) => {
-    return content.map((note, index) => (
-      <Typography variant="body2" color="textSecondary" component="p" key={index}>
-        {'० ' + note}
-      </Typography>
-    ))
+    let newContent = content.map(note => { return { primaryText: note } });
+    console.log(newContent);
+    return newContent;
   }
 
   return (
@@ -62,7 +60,7 @@ export default function WorkContent() {
             title={workplace.name}
             subTitle={workplace.jobTitle + ": " + workplace.dates}
             image={workplace.logo}
-            content={workplaceContent(workplace.notes)}
+            content={<Lists single listContent={workplaceContent(workplace.notes)} />}
           />
         </Grid>
       ))}

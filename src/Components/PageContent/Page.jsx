@@ -43,7 +43,7 @@ export default function Page(props) {
           <Paper className={classes.contentPaper} elevation={5}>
             <Paper className={classes.headerPaper} elevation={8}>
               <Fade in={true} timeout={TIMEOUT_START + TIMEOUT_OFFSET}>
-                <Typography variant="h3" className={classes.title}>
+                <Typography variant="h4" className={classes.title}>
                   {pageOptions.title}
                 </Typography>
               </Fade>
