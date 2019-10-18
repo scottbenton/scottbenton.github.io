@@ -8,7 +8,6 @@ import MyAvatar from '../../Components/PageContent/Avatar';
 import Lists from '../../Components/PageContent/Lists';
 
 import EmailIcon from '@material-ui/icons/Email';
-import LinkedInIcon from '../Resources/linkedinIcon.svg';
 
 import ProfilePic from '../Resources/ProfilePic.jpg';
 import CONSTANTS from '../Constants';

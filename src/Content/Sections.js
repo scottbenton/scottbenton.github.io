@@ -4,7 +4,6 @@ import AboutIcon from '@material-ui/icons/PersonSharp';
 import WorkIcon from '@material-ui/icons/WorkSharp';
 import EducationIcon from '@material-ui/icons/SchoolSharp';
 import ProjectsIcon from '@material-ui/icons/CollectionsBookmarkSharp';
-import ContactIcon from '@material-ui/icons/EmailSharp';
 
 import AboutContent from './SectionContent/AboutContent';
 import WorkContent from './SectionContent/WorkContent';
