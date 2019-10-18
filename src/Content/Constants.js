@@ -3,6 +3,6 @@ export default {
   lastName: 'Benton',
   fullName: 'Scott Benton',
   initials: 'SB',
-  mobileBreakpoint: "sm",
+  mobileBreakpoint: 'sm',
   email: 'scott.ma.benton@gmail.com'
 }

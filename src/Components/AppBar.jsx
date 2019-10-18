@@ -12,10 +12,11 @@ import CONSTANTS from '../Content/Constants';
 import SECTIONS from '../Content/Sections';
 import { useTheme, Grid, Tooltip } from '@material-ui/core';
 
-import { useIsMobile } from './MobileHelpers';
+import { useIsMobile } from '../HelperFunctions/MobileHelpers';
 
 import Drawer from './Drawer';
 
+import { downloadFile } from '../HelperFunctions/URLHelper';
 import Resume from '../Content/Resources/Resume-ScottBenton.pdf';
 
 const useStyles = makeStyles(theme => ({
@@ -56,13 +57,6 @@ export default function ButtonAppBar(props) {
 
   const onButtonClick = (section) => {
     setSelectedSection(section);
-  }
-
-  const downloadFile = (filePath, fileName) => {
-    var link = document.createElement('a');
-    link.href = filePath;
-    link.download = fileName;
-    link.click();
   }
 
   return (

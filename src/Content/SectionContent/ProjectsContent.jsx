@@ -8,6 +8,8 @@ import Grid from '@material-ui/core/Grid';
 import ImageCard from '../../Components/PageContent/ProjectCard';
 import { Typography, Button } from '@material-ui/core';
 
+import { openLink } from '../../HelperFunctions/URLHelper';
+
 export default function WorkContent() {
     const projects = [
         {
@@ -35,10 +37,10 @@ export default function WorkContent() {
     }
     const getActions = (project) => {
         return (project.codeLink || project.deployedLink) && (<>
-            {project.codeLink && <Button onClick={() => window.open(project.codeLink)}>
+            {project.codeLink && <Button onClick={() => openLink(project.codeLink)}>
                 View the Code
             </Button>}
-            {project.deployedLink && <Button onClick={() => window.open(project.deployedLink)} variant="contained" color="secondary">
+            {project.deployedLink && <Button onClick={() => openLink(project.deployedLink)} variant="contained" color="secondary">
                 Visit the Website
             </Button>}
         </>);
