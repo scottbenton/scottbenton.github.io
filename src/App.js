@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ThemeProvider from '@material-ui/styles/ThemeProvider';
 import { createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 import AppBar from './Components/AppBar';
-import Page from './Components/PageContent/Page';
+import Page from './Components/PageComponents/Page';
 import SECTIONS from './Content/Sections';
+
 
 const theme = () => createMuiTheme({
   palette: {

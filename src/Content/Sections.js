@@ -5,10 +5,10 @@ import WorkIcon from '@material-ui/icons/WorkSharp';
 import EducationIcon from '@material-ui/icons/SchoolSharp';
 import ProjectsIcon from '@material-ui/icons/CollectionsBookmarkSharp';
 
-import AboutContent from './SectionContent/AboutContent';
-import WorkContent from './SectionContent/WorkContent';
-import EducationContent from './SectionContent/EducationContent';
-import ProjectsContent from './SectionContent/ProjectsContent';
+import AboutContent from '../Components/PageContent/AboutContent';
+import WorkContent from '../Components/PageContent/WorkContent';
+import EducationContent from '../Components/PageContent/EducationContent';
+import ProjectsContent from '../Components/PageContent/ProjectsContent';
 
 export default {
   ABOUT: {
