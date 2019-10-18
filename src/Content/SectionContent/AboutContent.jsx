@@ -120,12 +120,12 @@ export default function AboutContent() {
       <Divider />
 
       {technologies.map(section => (
-        <>
+        <div key={section.title}>
           <Typography variant='h6' className={classes.sectionTitle}>
             {section.title}
           </Typography>
           <Lists listContent={listify(section.listItems)} icon={<ArrowIcon />} />
-        </>
+        </div>
       ))}
 
       <Typography variant='h5' className={classes.sectionTitle}>
