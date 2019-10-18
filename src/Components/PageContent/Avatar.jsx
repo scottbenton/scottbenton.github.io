@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 import Avatar from '@material-ui/core/Avatar';
-import { useIsMobile } from '../MobileHelpers';
+import { useIsMobile } from '../../HelperFunctions/MobileHelpers';
 
 import CONSTANTS from '../../Content/Constants';
 import NoImageIcon from '@material-ui/icons/Face';
