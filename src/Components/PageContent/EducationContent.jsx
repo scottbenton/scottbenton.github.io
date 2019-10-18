@@ -2,15 +2,14 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 
-import Avatar from '../../Components/PageContent/Avatar';
-import Lists from '../../Components/PageContent/Lists';
+import Avatar from '../PageComponents/Avatar';
+import Lists from '../PageComponents/Lists';
 
-import UDLogo from '../Resources/UDLogo.jpg';
 import Divider from '@material-ui/core/Divider';
 import Fade from '@material-ui/core/Fade'
 
-import CONSTANTS from '../Constants';
-
+import CONSTANTS from '../../Content/Constants';
+import EDUCATIONINFO from '../../Content/SectionInformation/EducationInformation';
 
 const useStyles = makeStyles(theme => ({
     university: {
@@ -34,69 +33,49 @@ const useStyles = makeStyles(theme => ({
 export default function EducationContent() {
     const classes = useStyles();
 
-    const COURSEWORK = [
-        { primaryText: 'Artificial Intelligence' },
-        { primaryText: 'Data Mining' },
-        { primaryText: 'Computer Graphics' },
-        { primaryText: 'Databases' },
-        { primaryText: 'Parallel Computing' },
-        { primaryText: 'Software Engineering' },
-        { primaryText: 'Advanced Web Technologies' },
-        { primaryText: 'Web Application Security' },
-    ]
+    const { avatar, schoolInfo, coursework, activities } = EDUCATIONINFO;
 
-    const ACTIVITIES = [
-        {
-            primaryText: 'CS+ Social Good',
-            secondaryText: 'Founding member, helped teach CS in local middle schools, and taught club members basics of web development.'
-        },
-        {
-            primaryText: 'UD Marching Band',
-            secondaryText: 'On student leadership staff as a visual coordinator. Created and taught the visual program for all 250+ members.'
-        }
-    ];
     return (
         <>
             <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION} >
                 <div>
-                    <Avatar image={UDLogo} />
+                    <Avatar image={avatar} />
                 </div>
             </Fade>
 
             <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: 1 * CONSTANTS.ANIMATION_OFFSET }}>
                 <div>
                     <Typography variant='h4' className={classes.university}>
-                        University of Delaware
+                        {schoolInfo.school}
                     </Typography>
                     <Typography variant='h4' className={classes.major} gutterBottom>
-                        BS in Computer Science
+                        {schoolInfo.degree}
                     </Typography>
-
                     <Typography variant='h5' className={classes.years} gutterBottom>
-                        August 2016 - December 2019
-                </Typography>
+                        {schoolInfo.dates}
+                    </Typography>
                 </div>
             </Fade>
 
             <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: 2 * CONSTANTS.ANIMATION_OFFSET }}>
                 <div>
                     <Typography variant='h5' className={classes.sectionTitle}>
-                        Relevant Coursework
+                        {coursework.header}
                     </Typography>
                     <Divider />
 
-                    <Lists listContent={COURSEWORK} />
+                    <Lists listContent={coursework.content} />
                 </div>
             </Fade>
 
             <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: 3 * CONSTANTS.ANIMATION_OFFSET }}>
                 <div>
                     <Typography variant='h5' className={classes.sectionTitle}>
-                        Clubs & Organizations
+                        {activities.header}
                     </Typography>
                     <Divider />
 
-                    <Lists listContent={ACTIVITIES} />
+                    <Lists listContent={activities.content} />
                 </div>
             </Fade>
         </>
