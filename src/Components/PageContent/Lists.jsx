@@ -1,12 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import Typography from '@material-ui/core/Typography';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 
 const useStyles = makeStyles(theme => ({
     container: {
-        margin: theme.spacing(1),
+        padding: theme.spacing(1)
     },
     topLine: {
         display: 'flex',
@@ -27,14 +27,14 @@ const useStyles = makeStyles(theme => ({
 export default function Lists(props) {
     const classes = useStyles();
 
-    const { listContent } = props;
+    const { listContent, icon = <CheckCircleOutlineIcon />, single = false } = props;
 
     return (
         <Grid container spacing={2} className={classes.container}>
             {listContent.map((content, index) => (
-                <Grid item xs={12} sm={6} key={index}>
+                <Grid item xs={12} sm={single ? 12 : 6} key={index}>
                     <div className={classes.topLine}>
-                        <CheckCircleIcon color='secondary' className={classes.icon} />
+                        {icon && React.cloneElement(icon, { color: 'secondary', className: classes.icon })}
                         <Typography>{content.primaryText}</Typography>
                     </div>
                     {content.secondaryText &&
