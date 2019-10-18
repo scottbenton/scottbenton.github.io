@@ -6,7 +6,10 @@ import Avatar from '../../Components/PageContent/Avatar';
 import Lists from '../../Components/PageContent/Lists';
 
 import UDLogo from '../Resources/UDLogo.jpg';
-import { Divider } from '@material-ui/core';
+import Divider from '@material-ui/core/Divider';
+import Fade from '@material-ui/core/Fade'
+
+import CONSTANTS from '../Constants';
 
 
 const useStyles = makeStyles(theme => ({
@@ -54,33 +57,48 @@ export default function EducationContent() {
     ];
     return (
         <>
-            <Avatar image={UDLogo} />
+            <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION} >
+                <div>
+                    <Avatar image={UDLogo} />
+                </div>
+            </Fade>
 
-            <Typography variant='h4' className={classes.university}>
-                University of Delaware
-            </Typography>
-            <Typography variant='h4' className={classes.major} gutterBottom>
-                BS in Computer Science
-            </Typography>
+            <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: 1 * CONSTANTS.ANIMATION_OFFSET }}>
+                <div>
+                    <Typography variant='h4' className={classes.university}>
+                        University of Delaware
+                    </Typography>
+                    <Typography variant='h4' className={classes.major} gutterBottom>
+                        BS in Computer Science
+                    </Typography>
 
-            <Typography variant='h5' className={classes.years} gutterBottom>
-                August 2016 - December 2019
-            </Typography>
+                    <Typography variant='h5' className={classes.years} gutterBottom>
+                        August 2016 - December 2019
+                </Typography>
+                </div>
+            </Fade>
 
-            <Typography variant='h5' className={classes.sectionTitle}>
-                Relevant Coursework
-            </Typography>
-            <Divider />
+            <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: 2 * CONSTANTS.ANIMATION_OFFSET }}>
+                <div>
+                    <Typography variant='h5' className={classes.sectionTitle}>
+                        Relevant Coursework
+                    </Typography>
+                    <Divider />
 
-            <Lists listContent={COURSEWORK} />
+                    <Lists listContent={COURSEWORK} />
+                </div>
+            </Fade>
 
+            <Fade in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: 3 * CONSTANTS.ANIMATION_OFFSET }}>
+                <div>
+                    <Typography variant='h5' className={classes.sectionTitle}>
+                        Clubs & Organizations
+                    </Typography>
+                    <Divider />
 
-            <Typography variant='h5' className={classes.sectionTitle}>
-                Clubs & Organizations
-            </Typography>
-            <Divider />
-
-            <Lists listContent={ACTIVITIES} />
+                    <Lists listContent={ACTIVITIES} />
+                </div>
+            </Fade>
         </>
     )
 }

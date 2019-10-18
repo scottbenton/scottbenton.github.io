@@ -5,6 +5,12 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import Divider from '@material-ui/core/Divider';
+
+import DescriptionSharpIcon from '@material-ui/icons/DescriptionSharp';
+
+import { downloadFile } from '../HelperFunctions/URLHelper';
+import Resume from '../Content/Resources/Resume-ScottBenton.pdf';
 
 import SECTIONS from '../Content/Sections';
 
@@ -31,6 +37,7 @@ export default function SwipeableTemporaryDrawer(props) {
         setOpen(false);
     };
 
+
     const sideList = side => (
         <div
             className={classes.list}
@@ -50,6 +57,18 @@ export default function SwipeableTemporaryDrawer(props) {
                         <ListItemText primary={SECTIONS[key].name} />
                     </ListItem>
                 ))}
+            </List>
+            <Divider />
+            <List>
+                <ListItem
+                    button
+                    onClick={() => downloadFile(Resume, 'ScottBenton-Resume.pdf')}
+                >
+                    <ListItemIcon>
+                        <DescriptionSharpIcon />
+                    </ListItemIcon>
+                    <ListItemText primary='Resume' />
+                </ListItem>
             </List>
         </div>
     );

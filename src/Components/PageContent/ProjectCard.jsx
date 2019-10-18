@@ -13,6 +13,9 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     flexDirection: 'column',
+    maxWidth: 600,
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   description: {
     padding: theme.spacing(1),

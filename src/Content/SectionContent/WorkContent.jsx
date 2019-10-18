@@ -8,6 +8,9 @@ import Grid from '@material-ui/core/Grid';
 
 import ImageCard from '../../Components/PageContent/WorkCard';
 import Lists from '../../Components/PageContent/Lists';
+import { Grow } from '@material-ui/core';
+
+import CONSTANTS from '../Constants';
 
 export default function WorkContent() {
   const workplaces = [
@@ -46,24 +49,27 @@ export default function WorkContent() {
     },
   ]
 
-  const workplaceContent = (content) => {
-    let newContent = content.map(note => { return { primaryText: note } });
-    console.log(newContent);
-    return newContent;
-  }
+  const workplaceContent = (content) => (
+    content.map(note => { return { primaryText: note } })
+  );
 
   return (
     <Grid container spacing={3}>
       {workplaces.map((workplace, index) => (
         <Grid item xs={12} md={6} key={index}>
-          <ImageCard
-            title={workplace.name}
-            subTitle={workplace.jobTitle + ": " + workplace.dates}
-            image={workplace.logo}
-            content={<Lists single listContent={workplaceContent(workplace.notes)} />}
-          />
-        </Grid>
-      ))}
-    </Grid>
+          <Grow in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: index * CONSTANTS.ANIMATION_OFFSET }}>
+            <div style={{ height: '100%' }}>
+              <ImageCard
+                title={workplace.name}
+                subTitle={workplace.jobTitle + ": " + workplace.dates}
+                image={workplace.logo}
+                content={<Lists single listContent={workplaceContent(workplace.notes)} />}
+              />
+            </div>
+          </Grow>
+        </Grid >
+      ))
+      }
+    </Grid >
   );
 }

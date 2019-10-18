@@ -5,17 +5,19 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles(theme => ({
   card: {
     height: '100%',
+    maxWidth: 600,
+    marginLeft: 'auto',
+    marginRight: 'auto',
   },
   cardContent: {
     padding: 0
   },
   cardMedia: {
-    padding: theme.spacing(1),
+    padding: theme.spacing(2),
   },
   cardHeaders: {
     backgroundColor: theme.palette.primary.main,
@@ -45,7 +47,6 @@ export default function WorkCard(props) {
         width={'100%'}
         className={classes.cardMedia}
       />
-      <Divider />
       <CardContent className={classes.cardContent}>
         {content}
       </CardContent>
