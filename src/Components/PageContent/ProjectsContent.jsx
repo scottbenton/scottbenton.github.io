@@ -1,33 +1,18 @@
 import React from 'react';
-
-import TextTwistLogo from '../Resources/TextTwistBackground.png';
-import ASORTDLogo from '../Resources/ASORTD.png';
-
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import Grow from '@material-ui/core/Grow';
 
-import ImageCard from '../../Components/PageContent/ProjectCard';
-import { Typography, Button, Grow } from '@material-ui/core';
+import ImageCard from '../PageComponents/ProjectCard';
 
 import { openLink } from '../../HelperFunctions/URLHelper';
-import CONSTANTS from '../Constants';
+import CONSTANTS from '../../Content/Constants';
+
+import PROJECTINFO from '../../Content/SectionInformation/ProjectsInformation';
 
 export default function WorkContent() {
-    const projects = [
-        {
-            name: 'Text Twist',
-            description: 'A clone of the game Text-Twist. Developed using React, Bootstrap, and PHP',
-            codeLink: 'https://github.com/scottbenton/TextTwist-UI',
-            deployedLink: 'https://scottbenton.github.io/TextTwist-UI/',
-            image: TextTwistLogo,
-        },
-        {
-            name: 'ASORTD',
-            description: 'Algorithm SORTing Display. A website that animates sorting algorithms, and allows users to input their own sorting algorithms to animate.',
-            codeLink: 'https://github.com/willswire/asortd',
-            deployedLink: 'https://asortd.info',
-            image: ASORTDLogo,
-        },
-    ];
+    const { projects } = PROJECTINFO;
 
     const projectDescription = (project) => {
         return (
@@ -51,7 +36,7 @@ export default function WorkContent() {
         <Grid container spacing={3}>
             {projects.map((project, index) => (
                 <Grid item xs={12} md={6} key={index}>
-                    <Grow in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: 1 * CONSTANTS.ANIMATION_OFFSET }}>
+                    <Grow in={true} timeout={CONSTANTS.ANIMATION_DURATION} style={{ transitionDelay: index * CONSTANTS.ANIMATION_OFFSET }}>
                         <div style={{ height: '100%' }}>
                             <ImageCard
                                 title={project.name}
